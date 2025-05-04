@@ -3,7 +3,13 @@ import PostItem from '../postItem/PostItem';
 import './PostList.css';
 
 function PostList() {
-  const posts = useSelector((state) => state.posts.posts);
+  const posts = useSelector((state) => {
+    const { posts, filteredSubreddit } = state.posts;
+    return filteredSubreddit
+      ? posts.filter((post) => post.subreddit === filteredSubreddit)
+      : posts;
+  });
+  
 
   return (
     <div className="post-list">

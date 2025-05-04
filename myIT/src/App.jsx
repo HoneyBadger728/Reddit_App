@@ -4,6 +4,7 @@ import { setPosts } from './features/slices/postsSlice';
 import mockPosts from './utilities/mockPosts';
 
 import SearchBar from './components/searchBar/SearchBar';
+import SubFilter from './components/subFilter/SubFilter';
 import PostList from './components/postList/PostList';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <h1>Welcome to my<span style={{color: 'red'}}>IT</span></h1>
       <SearchBar />
+      <SubFilter />
       <PostList />
     </div>
   );
