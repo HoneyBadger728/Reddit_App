@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setPosts } from './features/posts/postsSlice';
+import { setPosts } from './features/slices/postsSlice';
 import mockPosts from './utilities/mockPosts';
 
 import SearchBar from './components/searchBar/SearchBar';
