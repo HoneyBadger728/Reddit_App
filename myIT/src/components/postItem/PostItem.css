@@ -1,7 +1,16 @@
+.post-item {
+  background-color: rgb(192, 192, 192);
+  width: 100%;
+  box-shadow: 10px 8px 12px rgba(0, 0, 0);
+  margin: 1rem .5rem;
+  padding: .5rem;
+}
+
 .post-image {
-    max-width: 80%;
-    max-height: 25rem;
+    max-width: 95%;
+    max-height: 30rem;
     border-radius: 8px;
     margin: .5rem auto;
+    
   }
   

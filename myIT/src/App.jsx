@@ -6,6 +6,7 @@ import mockPosts from './utilities/mockPosts';
 import SearchBar from './components/searchBar/SearchBar';
 import SubFilter from './components/subFilter/SubFilter';
 import PostList from './components/postList/PostList';
+import './App.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -16,10 +17,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome to my<span style={{color: 'red'}}>IT</span></h1>
-      <SearchBar />
-      <SubFilter />
-      <PostList />
+      <div className='header'>
+        <h1>Welcome to my<span style={{color: 'red'}}>IT</span></h1>
+        <SearchBar />
+      </div>
+      <div className='content'>
+        <SubFilter />
+        <PostList />
+      </div>
+      
     </div>
   );
 }
