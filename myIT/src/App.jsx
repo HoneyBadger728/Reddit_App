@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <div className='header'>
-        <h1>Welcome to my<span style={{color: 'red'}}>IT</span></h1>
+        <h1>Welcome to my<span className='red-it'>IT</span></h1>
         <SearchBar />
       </div>
       <div className='content'>

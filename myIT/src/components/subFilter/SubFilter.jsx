@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import './SubFilter.css';
 import { setFilteredSubreddit } from '../../features/slices/postsSlice';
+import './SubFilter.css';
 
 function SubFilter() {
   const posts = useSelector((state) => state.posts.posts);
