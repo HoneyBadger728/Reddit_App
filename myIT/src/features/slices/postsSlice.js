@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   posts: [],
   filteredSubreddit: null,
+  searchTerm: '',
   status: 'idle',
   error: null,
 };
@@ -17,8 +18,11 @@ const postsSlice = createSlice({
     setFilteredSubreddit(state, action) {
       state.filteredSubreddit = action.payload;
     },
+    setSearchTerm(state, action) {
+      state.searchTerm = action.payload;
+    },
   },
 });
 
-export const { setPosts, setFilteredSubreddit } = postsSlice.actions;
+export const { setPosts, setFilteredSubreddit, setSearchTerm } = postsSlice.actions;
 export default postsSlice.reducer;

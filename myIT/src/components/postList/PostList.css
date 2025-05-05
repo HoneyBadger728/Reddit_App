@@ -1,3 +1,10 @@
 .post-list {
     width: 75%;
 }
+
+.no-results {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 2rem;
+    font-style: italic;
+  }
