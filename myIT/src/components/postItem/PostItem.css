@@ -8,9 +8,21 @@
 
 .post-image {
     max-width: 95%;
-    max-height: 30rem;
+    max-height: 35rem;
     border-radius: 8px;
     margin: .5rem auto;
     
+  }
+
+  .post-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+
+  .post-item button {
+    font-size: 1.2rem;
   }
   

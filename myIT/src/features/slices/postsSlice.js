@@ -13,7 +13,23 @@ const postsSlice = createSlice({
   initialState,
   reducers: {
     setPosts(state, action) {
-      state.posts = action.payload;
+      state.posts = action.payload.map((post) => {
+        const data = post.data;
+        return {
+          id: data.id,
+          title: data.title,
+          author: data.author,
+          subreddit: data.subreddit,
+          score: data.score,
+          num_comments: data.num_comments,
+          url: data.url,
+          image:
+            data.post_hint === 'image' && data.preview?.images?.[0]
+              ? data.preview.images[0].source.url.replace(/&amp;/g, '&')
+              : null,
+          comments: data.comments || [],
+        };
+      });
     },
     setFilteredSubreddit(state, action) {
       state.filteredSubreddit = action.payload;
