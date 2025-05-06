@@ -30,6 +30,27 @@ export const fetchPosts = createAsyncThunk(
   }
 );
 
+export const fetchComments = createAsyncThunk(
+  'posts/fetchComments',
+  async (permalink, thunkAPI) => {
+    const response = await fetch(`https://www.reddit.com${permalink}.json`);
+    const json = await response.json();
+
+    const comments = json[1].data.children
+    .filter((item) => item.kind === 't1')
+    .map((comment) => ({
+      id: comment.data.id,
+      author: comment.data.author,
+      text: comment.data.body,
+    }));
+
+    return {
+      permalink,
+      comments,
+    };
+  }
+);
+
 const initialState = {
   posts: [],
   filteredSubreddit: null,
@@ -61,7 +82,16 @@ const postsSlice = createSlice({
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      .addCase(fetchComments.fulfilled, (state, action) => {
+        const { permalink, comments } = action.payload;
+      
+        const post = state.posts.find((post) => `/r/${post.subreddit}/comments/${post.id}` === permalink);
+        if (post) {
+          post.comments = comments;
+        }
       });
+      
   },
 });
 

@@ -19,8 +19,8 @@ function PostList() {
 
   return (
     <div className="post-list">
-      {posts.length > 0 ? (
-        posts.map((post) => <PostItem key={post.id} post={post} />)
+      {filteredPosts.length > 0 ? (
+        filteredPosts.map((post) => <PostItem key={post.id} post={post} />)
       ) : (
         showNoResults && <p className="no-results">No matching posts found . . .</p>
       )}

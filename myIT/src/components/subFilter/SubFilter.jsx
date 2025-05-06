@@ -24,7 +24,7 @@ function SubFilter() {
 
   return (
     <div className="subreddit-filter">
-      <h4>Filter by Subreddit</h4>
+      <h4>Filter by Subreddit:</h4>
       <div className="subreddit-buttons">
         {subreddits.map((sub) => (
           <button

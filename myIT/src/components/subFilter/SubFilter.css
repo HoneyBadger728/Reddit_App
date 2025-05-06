@@ -2,6 +2,8 @@
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    width: 25%;
+    font-size: 1.8rem;
   }
 
   .subreddit-buttons {
@@ -13,18 +15,28 @@
   }
   
   .subreddit-buttons button {
+    font-size: 1.1rem;
     margin: 0.25rem;
     padding: 0.5rem 1rem;
     width: 100%;
     border: solid 1px black;
     border-radius: 14px;
-    box-shadow: 4px 3.5px 2px black;
-    background-color: #ddd;
+    box-shadow: 8px 5px 6px black;
+    background-color: white;
     cursor: pointer;
   }
+
+  .subreddit-buttons button:hover {
+    background-color: red;
+    color: white;
+  }
+
+ 
   
   .subreddit-buttons .active {
-    background-color: #ff4500;
+    background-color: red;
     color: white;
+    box-shadow: 1px 1px 1px black;
+    transform: translateY(2px);
   }
   
