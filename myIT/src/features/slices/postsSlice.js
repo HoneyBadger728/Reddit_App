@@ -16,6 +16,7 @@ export const fetchPosts = createAsyncThunk(
       return {
         id: data.id,
         title: data.title,
+        selftext: data.selftext,
         author: data.author,
         subreddit: data.subreddit,
         score: data.score,

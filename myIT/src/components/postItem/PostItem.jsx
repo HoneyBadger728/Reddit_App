@@ -19,6 +19,7 @@ function PostItem({ post }) {
     <div className="post-item">
       <h3>{post.title}</h3>
       {post.image && <img src={post.image} alt={post.title} className="post-image" />}
+      {post.selftext && (<p className='post-body'>{post.selftext}</p>)}
       <div className="post-details">
         <p><strong>Author:</strong> {post.author}</p>
         <p>
