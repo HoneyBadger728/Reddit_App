@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { setSearchTerm } from '../../features/slices/postsSlice';
+import { setSearchTerm, fetchPosts } from '../../features/slices/postsSlice';
 import './SearchBar.css';
 
 function SearchBar() {
@@ -13,11 +13,13 @@ function SearchBar() {
 
   const handleSearch = () => {
     dispatch(setSearchTerm(inputValue));
+    dispatch(fetchPosts(inputValue));
   };
 
   const handleClear = () => {
     setInputValue('');
     dispatch(setSearchTerm(''));
+    dispatch(fetchPosts(''));
   };
 
   const handleKeyPress = (e) => {

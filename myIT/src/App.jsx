@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { setPosts } from './features/slices/postsSlice';
-import mockPosts from './utilities/mockPosts';
+import { fetchPosts } from './features/slices/postsSlice';
 
 import SearchBar from './components/searchBar/SearchBar';
 import SubFilter from './components/subFilter/SubFilter';
@@ -12,9 +11,9 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setPosts(mockPosts));
+    dispatch(fetchPosts());
   }, [dispatch]);
-
+  
   return (
     <div className="App">
       <div className='header'>
